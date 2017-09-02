@@ -10,8 +10,8 @@ train_ratio = 0.9
 shuffle_data = False
 one_hot_as_input = False
 embeddings_as_input = False
-save_embeddings = False
-save_models = False
+save_embeddings = True
+save_models = True
 saved_embeddings_fname = "embeddings.pickle"  # set save_embeddings to True to create this file
 
 f = open('feature_train_data.pickle', 'rb')
@@ -55,7 +55,7 @@ print("Number of samples used for training: " + str(y_train.shape[0]))
 models = []
 
 print("Fitting NN_with_EntityEmbedding...")
-for i in range(5):
+for i in range(2):
     models.append(NN_with_EntityEmbedding(X_train, y_train, X_val, y_val))
 
 # print("Fitting NN...")
@@ -87,7 +87,7 @@ if save_embeddings:
 
 if save_models:
     with open('models.pickle', 'wb') as f:
-        pickle.dump(models, f)
+        pickle.dump(models, f, -1)
 
 
 def evaluate_models(models, X, y):

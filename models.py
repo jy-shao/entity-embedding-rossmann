@@ -9,7 +9,9 @@ from sklearn import neighbors
 from sklearn.preprocessing import Normalizer
 
 from keras.models import Sequential
-from keras.layers.core import Dense, Activation, Merge, Reshape
+#from keras.layers.core import Dense, Activation, Merge, Reshape
+from keras.layers.core import Dense, Activation, Reshape
+from keras.layers import Merge
 from keras.layers.embeddings import Embedding
 from keras.callbacks import ModelCheckpoint
 
